@@ -72,7 +72,9 @@ This structure improves readability and keeps business logic separated from pres
 2. cd urban-harvest
 3. npm install
 4. npm run dev
-5. Visit "http://localhost:3000"
+5. Visit http://localhost:3000
+
+# Deployement Link: https://urban-harvest-weld.vercel.app/
 
 # Notes
 Product data is currently hardcoded for the assignment.
