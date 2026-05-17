@@ -2,6 +2,8 @@ type props = {
   className?: string;
   selectedCategory: string;
   setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+  openFilters: boolean;
+  setOpenFilters: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const category = ["All", "Fruits", "Vegetables", "Herbs", "Dairy"];
@@ -10,10 +12,12 @@ export default function FilterBar({
   className,
   selectedCategory,
   setSelectedCategory,
+  openFilters,
+  setOpenFilters,
 }: props) {
   return (
     <div className={className}>
-      <h1 className="p-2 px-4 text-md  border-b">Filter</h1>
+      <h1 className="p-2 px-4 text-2xl font-semibold">Filter</h1>
       <div className="items-start w-full">
         {category.map((item, index) => {
           return (
@@ -31,12 +35,17 @@ export default function FilterBar({
               >
                 {item}
               </button>
-              <label htmlFor={item} className="cursor-pointer">
-                {item}
-              </label>
             </div>
           );
         })}
+      </div>
+      <div
+        className="text-black text-sm p-2 px-4 flex lg:hidden"
+        onClick={() => setOpenFilters(!openFilters)}
+      >
+        <p className="bg-green-800 p-1 px-2 text-[12px] rounded-2xl text-green-100 font-bold ">
+          Show Result
+        </p>
       </div>
     </div>
   );

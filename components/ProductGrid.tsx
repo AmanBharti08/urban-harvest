@@ -10,7 +10,7 @@ type props = {
   selectedCategory: string;
 };
 
-export default function FilterBar({
+export default function ProductGrid({
   className,
   cart,
   addToCart,
@@ -42,7 +42,7 @@ export default function FilterBar({
                   </p>
                   <p className="text-sm bg-green-100 text-green-800 p-1 px-2 flex justify-center  items-center w-12 rounded-2xl">
                     {" "}
-                    {item.price}
+                    ₹{item.price}
                   </p>
                 </div>
 
@@ -61,7 +61,8 @@ export default function FilterBar({
           return (
             <div
               key={index}
-              className="bg-white p-2 px-4 rounded-md w-full shadow-sm flex flex-col gap-5 hover:scale-102"
+              className="bg-white p-2 px-4 rounded-md w-full shadow-sm flex flex-col gap-5 hover:scale-[1.02]
+transition"
             >
               <h2 className="text-2xl font-bold text-green-800 mb-5">
                 {item.item}
@@ -72,7 +73,7 @@ export default function FilterBar({
                 </p>
                 <p className="text-sm bg-green-100 text-green-800 p-1 px-2 flex justify-center  items-center w-12 rounded-2xl">
                   {" "}
-                  {item.price}
+                  ₹{item.price}
                 </p>
               </div>
               {cartItem ? (
